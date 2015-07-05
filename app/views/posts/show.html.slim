@@ -1,0 +1,19 @@
+.page-header
+  = link_to posts_path, class: 'btn btn-default' do 
+    span.glyphicon.glyphicon-list-alt
+    |  Back 
+  = link_to edit_post_path(@post), class: 'btn btn-primary' do 
+    span.glyphicon.glyphicon-pencil
+    |  Edit 
+  = link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-danger'
+  h1
+    | Show post
+dl.dl-horizontal
+  dt
+    | Title:
+  dd
+    = @post.title
+  dt
+    | Body:
+  dd
+    = @post.body

@@ -43,3 +43,10 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
+gem 'quiet_assets'
+gem 'slim-rails'
+gem 'pry-rails'
+gem 'bootstrap-sass'
+gem 'bootstrap-generators'
