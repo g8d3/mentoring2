@@ -9,20 +9,16 @@
   table.table.table-striped.table-bordered.table-hover
     thead
       tr
-        th
-          | Title
-        th
-          | Body
+        - Post.attribute_names.each do |attr|
+          th = attr
         th
         th
         th
     tbody
       - @posts.each do | post |
         tr
-          td
-            = post.title
-          td
-            = post.body
+          - Post.attribute_names.each do |attr|
+            td = post.send attr
           td
             = link_to 'Show', post
           td
