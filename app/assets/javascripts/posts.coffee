@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-	return
+	# return
 	$(".gridster ul").gridster
 		widget_margins: [10, 10]
 		widget_base_dimensions: [140, 140]
