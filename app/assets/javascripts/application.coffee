@@ -15,15 +15,22 @@
 # require jquery_ujs
 # require turbolinks
 #= require bootstrap
+#= require mousetrap.min
+#= require mousetrap-global-bind.min
 # require_tree .
 
 $(document).on 'page:change', ->
 	$(document).trigger('ready')
 
 timeout = null
-$(document).keyup ->
-	clearTimeout timeout if timeout
-	setTimeout save, 1000
+
 	
-save = ->
-	$.post '/save.json', path: 'fractal/index2.html', data: $('html').html(), (res) ->
+save = (time = 1000) ->
+	clearTimeout timeout if timeout
+	_save = ->
+		$.post '/save.json', path: $('body').attr('save'), data: $('html').html(), (res) ->
+	timeout = setTimeout _save, time
+
+$(document).keyup -> save(7000)
+
+Mousetrap.bindGlobal 'ctrl+shift+s', save
