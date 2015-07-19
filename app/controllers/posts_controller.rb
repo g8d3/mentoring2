@@ -4,6 +4,12 @@ class PostsController < InheritedResources::Base
 	skip_before_filter :verify_authenticity_token
 	before_filter :authenticate_user!, only: :index
 
+	def save
+		File.write Rails.root.join('public', params[:path]), params[:data]
+		render json: {}
+	end
+
+
 	private
 
 	def allow_origin

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post 'save', to: 'posts#save'
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :posts
