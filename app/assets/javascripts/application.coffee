@@ -13,13 +13,13 @@
 #= require jquery
 # require interact-1.2.4.min
 # require jquery-ui
-#= require jquery.gridster
-#= require jquery_ujs
-#= require turbolinks
-#= require bootstrap
+# require jquery.gridster
+# require jquery_ujs
+# require turbolinks
+# require bootstrap
 #= require mousetrap.min
 #= require mousetrap-global-bind.min
-#= require_tree .
+# require_tree .
 
 $(document).on 'page:change', ->
 	$(document).trigger('ready')
