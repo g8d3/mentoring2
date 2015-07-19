@@ -11,16 +11,28 @@
 # about supported directives.
 #
 #= require jquery
+# require interact-1.2.4.min
+# require jquery-ui
 # require jquery.gridster
 # require jquery_ujs
 # require turbolinks
-#= require bootstrap
+# require bootstrap
 #= require mousetrap.min
 #= require mousetrap-global-bind.min
 # require_tree .
 
 $(document).on 'page:change', ->
 	$(document).trigger('ready')
+
+
+$ ->
+	Draggable.create ".image.phone",
+		type: "x,y"
+		# edgeResistance: 0.65
+		# bounds:"#container"
+		throwProps:true
+
+	# interact('.image.phone').draggable({})
 
 timeout = null
 
