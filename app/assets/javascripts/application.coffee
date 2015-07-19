@@ -24,7 +24,7 @@ $(document).on 'page:change', ->
 
 timeout = null
 
-	
+# TODO: bug, saves after 7 seconds event when using shortcut 
 save = (time = 1000) ->
 	clearTimeout timeout if timeout
 	_save = ->
